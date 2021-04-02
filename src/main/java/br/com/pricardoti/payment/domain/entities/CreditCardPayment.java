@@ -7,9 +7,9 @@ import java.time.LocalDate;
 
 public class CreditCardPayment extends Payment {
 
-    private String cardHolderName;
-    private String cardNumber;
-    private String lastTransactionNumber;
+    private final String cardHolderName;
+    private final String cardNumber;
+    private final String lastTransactionNumber;
 
     private CreditCardPayment(
             LocalDate paidDate,
@@ -18,32 +18,26 @@ public class CreditCardPayment extends Payment {
             Double paidtotal,
             String payer,
             Document document,
-            Address address
+            Address address,
+            String cardHolderName,
+            String cardNumber,
+            String lastTransactionNumber
     ) {
         super(paidDate, expireDate, total, paidtotal, payer, document, address);
+        this.cardHolderName = cardHolderName;
+        this.cardNumber = cardNumber;
+        this.lastTransactionNumber = lastTransactionNumber;
     }
 
     public String getCardHolderName() {
         return cardHolderName;
     }
 
-    public void setCardHolderName(String cardHolderName) {
-        this.cardHolderName = cardHolderName;
-    }
-
     public String getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-
     public String getLastTransactionNumber() {
         return lastTransactionNumber;
-    }
-
-    public void setLastTransactionNumber(String lastTransactionNumber) {
-        this.lastTransactionNumber = lastTransactionNumber;
     }
 }

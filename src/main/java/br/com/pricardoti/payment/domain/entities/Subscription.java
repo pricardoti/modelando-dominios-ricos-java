@@ -1,18 +1,22 @@
 package br.com.pricardoti.payment.domain.entities;
 
+import br.com.pricardoti.payment.shared.Entity;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static java.util.Collections.unmodifiableList;
 
-public class Subscription {
+public class Subscription implements Entity<UUID> {
 
     private final LocalDate expireDate;
     private final List<Payment> payments = new ArrayList<>();
-    private boolean active;
-
     private final LocalDate create;
+
+    private UUID id;
+    private boolean active;
     private LocalDate lastUpdate;
 
     public Subscription(LocalDate expireDate) {
@@ -50,5 +54,10 @@ public class Subscription {
     public void deactivated() {
         this.active = Boolean.FALSE;
         this.lastUpdate = LocalDate.now();
+    }
+
+    @Override
+    public UUID getId() {
+        return id;
     }
 }

@@ -2,22 +2,23 @@ package br.com.pricardoti.payment.domain.entities;
 
 import br.com.pricardoti.payment.domain.valueobjects.Address;
 import br.com.pricardoti.payment.domain.valueobjects.Document;
+import br.com.pricardoti.payment.shared.Entity;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
-public abstract class Payment {
+public abstract class Payment implements Entity<UUID> {
 
-    private UUID number;
-    private LocalDate paidDate;
-    private LocalDate expireDate;
+    private final UUID id;
+    private final LocalDate paidDate;
+    private final LocalDate expireDate;
 
-    private Double total;
-    private Double paidtotal;
+    private final Double total;
+    private final Double paidtotal;
 
-    private String payer;
-    private Document document;
-    private Address address;
+    private final String payer;
+    private final Document document;
+    private final Address address;
 
     protected Payment(
             LocalDate paidDate,
@@ -28,7 +29,7 @@ public abstract class Payment {
             Document document,
             Address address
     ) {
-        this.number = UUID.randomUUID();
+        this.id = UUID.randomUUID();
         this.paidDate = paidDate;
         this.expireDate = expireDate;
         this.total = total;
@@ -38,8 +39,9 @@ public abstract class Payment {
         this.address = address;
     }
 
-    public UUID getNumber() {
-        return number;
+    @Override
+    public UUID getId() {
+        return id;
     }
 
     public LocalDate getPaidDate() {

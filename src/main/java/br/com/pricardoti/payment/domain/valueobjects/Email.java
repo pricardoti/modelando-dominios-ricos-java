@@ -1,6 +1,8 @@
 package br.com.pricardoti.payment.domain.valueobjects;
 
-public class Email {
+import br.com.pricardoti.payment.shared.ValueObject;
+
+public class Email implements ValueObject {
 
     private final String address;
 

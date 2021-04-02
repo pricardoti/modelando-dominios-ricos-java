@@ -3,21 +3,23 @@ package br.com.pricardoti.payment.domain.entities;
 import br.com.pricardoti.payment.domain.valueobjects.Address;
 import br.com.pricardoti.payment.domain.valueobjects.Document;
 import br.com.pricardoti.payment.domain.valueobjects.Email;
+import br.com.pricardoti.payment.shared.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Collections.unmodifiableList;
 
-public class Student {
+public class Student implements Entity<Long> {
+
+    private Long id;
+    private Address address;
 
     private final String firstName;
     private final String lastName;
     private final Document document;
     private final Email email;
     private final List<Subscription> subscriptions = new ArrayList<>();
-
-    private Address address;
 
     public Student(
             String firstName,
@@ -58,5 +60,10 @@ public class Student {
     public void addSubscription(Subscription subscription) {
         subscriptions.forEach(Subscription::deactivated);
         subscriptions.add(subscription);
+    }
+
+    @Override
+    public Long getId() {
+        return id;
     }
 }

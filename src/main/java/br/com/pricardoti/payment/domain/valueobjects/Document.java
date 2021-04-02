@@ -1,8 +1,9 @@
 package br.com.pricardoti.payment.domain.valueobjects;
 
 import br.com.pricardoti.payment.domain.enums.DocumentTypeEnum;
+import br.com.pricardoti.payment.shared.ValueObject;
 
-public class Document {
+public class Document implements ValueObject {
 
     private final String number;
     private final DocumentTypeEnum type;

@@ -1,6 +1,8 @@
 package br.com.pricardoti.payment.domain.valueobjects;
 
-public class Address {
+import br.com.pricardoti.payment.shared.ValueObject;
+
+public class Address implements ValueObject {
 
     private final String street;
     private final String number;
