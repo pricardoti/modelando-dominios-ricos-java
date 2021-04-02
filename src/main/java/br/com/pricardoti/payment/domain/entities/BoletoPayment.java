@@ -1,7 +1,9 @@
 package br.com.pricardoti.payment.domain.entities;
 
+import br.com.pricardoti.payment.domain.valueobjects.Address;
+import br.com.pricardoti.payment.domain.valueobjects.Document;
+
 import java.time.LocalDate;
-import java.util.UUID;
 
 public class BoletoPayment extends Payment {
 
@@ -14,8 +16,8 @@ public class BoletoPayment extends Payment {
             Double total,
             Double paidtotal,
             String payer,
-            String document,
-            String address,
+            Document document,
+            Address address,
             Long boletoNumber,
             String barCode
     ) {

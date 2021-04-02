@@ -1,5 +1,8 @@
 package br.com.pricardoti.payment.domain.entities;
 
+import br.com.pricardoti.payment.domain.valueobjects.Address;
+import br.com.pricardoti.payment.domain.valueobjects.Document;
+
 import java.time.LocalDate;
 
 public class PayPalPayment extends Payment {
@@ -12,8 +15,8 @@ public class PayPalPayment extends Payment {
             Double total,
             Double paidtotal,
             String payer,
-            String document,
-            String address,
+            Document document,
+            Address address,
             String transactionCode
     ) {
         super(paidDate, expireDate, total, paidtotal, payer, document, address);

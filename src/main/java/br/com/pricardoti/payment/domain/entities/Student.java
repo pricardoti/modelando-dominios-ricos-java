@@ -1,5 +1,9 @@
 package br.com.pricardoti.payment.domain.entities;
 
+import br.com.pricardoti.payment.domain.valueobjects.Address;
+import br.com.pricardoti.payment.domain.valueobjects.Document;
+import br.com.pricardoti.payment.domain.valueobjects.Email;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,17 +13,17 @@ public class Student {
 
     private final String firstName;
     private final String lastName;
-    private final String document;
-    private final String email;
+    private final Document document;
+    private final Email email;
     private final List<Subscription> subscriptions = new ArrayList<>();
 
-    private String address;
+    private Address address;
 
     public Student(
             String firstName,
             String lastName,
-            String document,
-            String email
+            Document document,
+            Email email
     ) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -35,15 +39,15 @@ public class Student {
         return lastName;
     }
 
-    public String getDocument() {
+    public Document getDocument() {
         return document;
     }
 
-    public String getEmail() {
+    public Email getEmail() {
         return email;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 

@@ -1,5 +1,8 @@
 package br.com.pricardoti.payment.domain.entities;
 
+import br.com.pricardoti.payment.domain.valueobjects.Address;
+import br.com.pricardoti.payment.domain.valueobjects.Document;
+
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -13,8 +16,8 @@ public abstract class Payment {
     private Double paidtotal;
 
     private String payer;
-    private String document;
-    private String address;
+    private Document document;
+    private Address address;
 
     protected Payment(
             LocalDate paidDate,
@@ -22,8 +25,8 @@ public abstract class Payment {
             Double total,
             Double paidtotal,
             String payer,
-            String document,
-            String address
+            Document document,
+            Address address
     ) {
         this.number = UUID.randomUUID();
         this.paidDate = paidDate;
@@ -59,11 +62,11 @@ public abstract class Payment {
         return payer;
     }
 
-    public String getDocument() {
+    public Document getDocument() {
         return document;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 }
