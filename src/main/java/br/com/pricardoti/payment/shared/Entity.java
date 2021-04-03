@@ -1,6 +1,8 @@
 package br.com.pricardoti.payment.shared;
 
-public interface Entity<T> {
+import br.com.pricardoti.payment.shared.notifications.Notifiable;
 
-    T getId();
+public abstract class Entity<T> extends Notifiable {
+
+    public abstract T getId();
 }
