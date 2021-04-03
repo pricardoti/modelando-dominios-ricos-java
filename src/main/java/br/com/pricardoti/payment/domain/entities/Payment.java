@@ -7,7 +7,7 @@ import br.com.pricardoti.payment.shared.Entity;
 import java.time.LocalDate;
 import java.util.UUID;
 
-public abstract class Payment implements Entity<UUID> {
+public abstract class Payment extends Entity<UUID> {
 
     private final UUID id;
     private final LocalDate paidDate;

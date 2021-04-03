@@ -9,7 +9,7 @@ import java.util.UUID;
 
 import static java.util.Collections.unmodifiableList;
 
-public class Subscription implements Entity<UUID> {
+public class Subscription extends Entity<UUID> {
 
     private final LocalDate expireDate;
     private final List<Payment> payments = new ArrayList<>();
