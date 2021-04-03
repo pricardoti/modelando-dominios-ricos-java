@@ -3,6 +3,7 @@
 Este projeto tem como objetivo aplicar os conceitos apresentado duranto o curso **Modelando Domínios Ricos do André Baltieri**.
 
 Link: https://balta.io/cursos/modelando-dominios-ricos
+Flunt (Lib de notifications C#): https://github.com/andrebaltieri/Flunt
 
 Foram aplicados os conceitos de **OOP, DDD e CQRS** para modelar um contexto de pagamentos, onde é realizado uma transformação de domínios anêmicos para domínios ricos.
 
