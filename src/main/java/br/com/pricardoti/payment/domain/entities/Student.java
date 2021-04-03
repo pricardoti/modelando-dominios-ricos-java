@@ -9,8 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Collections.unmodifiableList;
+import static java.util.Objects.isNull;
 
-public class Student implements Entity<Long> {
+public class Student extends Entity<Long> {
 
     private Long id;
     private Address address;
@@ -31,6 +32,9 @@ public class Student implements Entity<Long> {
         this.lastName = lastName;
         this.document = document;
         this.email = email;
+
+        if (isNull(firstName) || firstName.isBlank())
+            addNotification("name.firstname", "Nome é inválido!");
     }
 
     public String getFirstName() {

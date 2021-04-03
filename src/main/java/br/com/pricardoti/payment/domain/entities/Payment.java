@@ -21,13 +21,13 @@ public abstract class Payment implements Entity<UUID> {
     private final Address address;
 
     protected Payment(
-            LocalDate paidDate,
-            LocalDate expireDate,
-            Double total,
-            Double paidtotal,
-            String payer,
-            Document document,
-            Address address
+        LocalDate paidDate,
+        LocalDate expireDate,
+        Double total,
+        Double paidtotal,
+        String payer,
+        Document document,
+        Address address
     ) {
         this.id = UUID.randomUUID();
         this.paidDate = paidDate;
