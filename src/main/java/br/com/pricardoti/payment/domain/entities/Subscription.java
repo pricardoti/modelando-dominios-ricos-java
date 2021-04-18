@@ -1,6 +1,8 @@
 package br.com.pricardoti.payment.domain.entities;
 
 import br.com.pricardoti.payment.shared.Entity;
+import br.com.pricardoti.payment.shared.notifications.Notifiable;
+import br.com.pricardoti.payment.shared.notifications.Notification;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,7 +11,7 @@ import java.util.UUID;
 
 import static java.util.Collections.unmodifiableList;
 
-public class Subscription extends Entity<UUID> {
+public class Subscription extends Notifiable<Notification> implements Entity<UUID> {
 
     private final LocalDate expireDate;
     private final List<Payment> payments = new ArrayList<>();

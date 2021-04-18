@@ -4,6 +4,8 @@ import br.com.pricardoti.payment.domain.valueobjects.Address;
 import br.com.pricardoti.payment.domain.valueobjects.Document;
 import br.com.pricardoti.payment.domain.valueobjects.Email;
 import br.com.pricardoti.payment.shared.Entity;
+import br.com.pricardoti.payment.shared.notifications.Notifiable;
+import br.com.pricardoti.payment.shared.notifications.Notification;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +13,7 @@ import java.util.List;
 import static java.util.Collections.unmodifiableList;
 import static java.util.Objects.isNull;
 
-public class Student extends Entity<Long> {
+public class Student extends Notifiable<Notification> implements Entity<Long> {
 
     private Long id;
     private Address address;

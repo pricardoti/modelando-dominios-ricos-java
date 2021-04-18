@@ -2,15 +2,15 @@ package br.com.pricardoti.payment.shared.notifications;
 
 public class Notification {
 
-    private String key;
+    private String property;
     private String message;
 
-    public String getKey() {
-        return key;
+    public String getProperty() {
+        return property;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setProperty(String property) {
+        this.property = property;
     }
 
     public String getMessage() {

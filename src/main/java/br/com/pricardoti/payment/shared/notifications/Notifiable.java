@@ -1,10 +1,11 @@
 package br.com.pricardoti.payment.shared.notifications;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-public abstract class Notifiable<T> extends Notification {
+public abstract class Notifiable<T> {
 
     private final List<T> notifications = new ArrayList<>();
 
@@ -13,8 +14,7 @@ public abstract class Notifiable<T> extends Notification {
     }
 
     public void addNotification(String key, String message) {
-        Notification notification = (Notification) getNotificationInstance(key, message);
-        this.notifications.add((T) notification);
+        this.notifications.add((T) getNotificationInstance(key, message));
     }
 
     public void addNotification(T notification) {
@@ -25,10 +25,10 @@ public abstract class Notifiable<T> extends Notification {
         this.notifications.addAll(notifications);
     }
 
-    public void addNotification(T[] notifications) {
-        for (T notification : notifications) {
+    public void addNotifications(T... notifications) {
+        Arrays.stream(notifications).forEach(notification -> {
             addNotification(notification);
-        }
+        });
     }
 
     public void clear() {

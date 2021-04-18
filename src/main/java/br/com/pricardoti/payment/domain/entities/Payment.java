@@ -7,7 +7,7 @@ import br.com.pricardoti.payment.shared.Entity;
 import java.time.LocalDate;
 import java.util.UUID;
 
-public abstract class Payment extends Entity<UUID> {
+public abstract class Payment implements Entity<UUID> {
 
     private final UUID id;
     private final LocalDate paidDate;
@@ -21,13 +21,13 @@ public abstract class Payment extends Entity<UUID> {
     private final Address address;
 
     protected Payment(
-        LocalDate paidDate,
-        LocalDate expireDate,
-        Double total,
-        Double paidtotal,
-        String payer,
-        Document document,
-        Address address
+            LocalDate paidDate,
+            LocalDate expireDate,
+            Double total,
+            Double paidtotal,
+            String payer,
+            Document document,
+            Address address
     ) {
         this.id = UUID.randomUUID();
         this.paidDate = paidDate;
